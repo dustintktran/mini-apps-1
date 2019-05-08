@@ -48,9 +48,9 @@ const Form1 = (props) => {
     <div>
       <div>Please fill out the following information</div>
       <form>
-        <span>Name: </span><input></input><br/>
-        <span>Email Address: </span><input></input><br/>
-        <span>Password: </span><input></input><br/>
+        <span id="name">Name: </span><input></input><br/>
+        <span id="email">Email Address: </span><input></input><br/>
+        <span id="password">Password: </span><input></input><br/>
         <button onClick={props.form1}>Next</button>
       </form>
     </div>
