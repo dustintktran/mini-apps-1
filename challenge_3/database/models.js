@@ -29,16 +29,19 @@ const FormData = connection.define('checkout', {
     },
     address: {
         type: Sequelize.STRING(150),
-        allowNull: false
+        allowNull: false,
+        defaultValue: 'none'
     },
     phone: {
         type: Sequelize.STRING(12),
-        allowNull: false
+        allowNull: false,
+        defaultValue: 'none'
     },
     payment: {
-        type: Sequelize.STRING(100),
-        allowNull: false
+        type: Sequelize.STRING(150),
+        allowNull: false,
+        defaultValue: 'none'
     }
 })
-
+FormData.sync({force: true});
 module.exports.FormData = FormData;
