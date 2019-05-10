@@ -1,47 +1,45 @@
 const Sequelize = require('sequelize');
 const connection = require('./index.js');
 
-// const Test = connection.define('checkout', {
-//     testItem: {
-//         type: Sequelize.STRING,
-//         allowNull: false
-//     },
-//     testCost: {
-//         type: Sequelize.STRING,
-//         allowNull: false
-//     }
-// }, {
-//     connection, timestamps: false
-// })
-
-const FormData = connection.define('checkout', {
+const Form = connection.define('info', {
     name: {
         type: Sequelize.STRING(20),
         allowNull: false
     },
     email: {
-        type: Sequelize.STRING(40),
+        type: Sequelize.STRING(50),
         allowNull: false
     },
     password: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING(20),
         allowNull: false
     },
     address: {
-        type: Sequelize.STRING(150),
-        allowNull: false,
-        defaultValue: 'none'
+        type: Sequelize.STRING(100)
+    },
+    cityState: {
+        type: Sequelize.STRING(100)
+    },
+    zip: {
+        type: Sequelize.STRING(100)
     },
     phone: {
-        type: Sequelize.STRING(12),
-        allowNull: false,
-        defaultValue: 'none'
+        type: Sequelize.STRING(100)
     },
-    payment: {
-        type: Sequelize.STRING(150),
-        allowNull: false,
-        defaultValue: 'none'
+    card: {
+        type: Sequelize.STRING(50)
+    },
+    expire: {
+        type: Sequelize.STRING(10)
+    },
+    CVV: {
+        type: Sequelize.STRING(5)
+    },
+    zip2: {
+        type: Sequelize.STRING(10)
     }
 })
-FormData.sync({force: true});
-module.exports.FormData = FormData;
+
+Form.sync({force: true})
+
+module.exports.Form = Form;
